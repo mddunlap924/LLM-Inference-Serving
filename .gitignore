@@ -1,0 +1,13 @@
+.env
+.venv
+.vscode
+__pycache__/
+.ipynb_checkpoints/
+# llamafile-assets/
+*.pt
+*.pickle
+*.zip
+*.llamafile
+output.txt
+main.log
+*.mp4
