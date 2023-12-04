@@ -31,11 +31,12 @@ Open source large language models (LLMs) are being democratized in a variety of 
 This repository is focused on demonstrating some of these packages which provide the following **benefits of low-latency, high-throughput, and cost-effectiveness**. Several of the notebooks in this repo. will demonstrate how to:
 - Execute LLMs on CPUs instead of GPU hardware.
 - Execute quantized `Llama-2` models that are ~4GB in size.
+- Obtain hidden dimension embeddings from GGUF models.
 
 
 # Demo Notebooks
 ## llamafile
-[llamafile](https://github.com/Mozilla-Ocho/llamafile/tree/0.2.1) lets you distribute and LLMs with a single binary file. llamafile is the fastest executable file format ever and it lets you turn LLM weights into runnable llama.cpp binaries using cosmo libc. It executes on six different OSes and can run on CPU or GPUs. The following notebooks show examples of how to call and execute LLMs using the [llamafile](https://github.com/Mozilla-Ocho/llamafile/tree/0.2.1) library. The files in folder `llamafile-assets` were downloaded from [here](https://github.com/Mozilla-Ocho/llamafile/releases/tag/0.2.1).
+[llamafile](https://github.com/Mozilla-Ocho/llamafile/tree/0.2.1) lets you distribute LLMs with a single binary file. llamafile is the fastest executable file format ever and it lets you turn LLM weights into runnable llama.cpp binaries using cosmo libc. It executes on six different OSes and can run on CPU or GPUs. The following notebooks show examples of how to call and execute LLMs using the [llamafile](https://github.com/Mozilla-Ocho/llamafile/tree/0.2.1) library. The files in folder `llamafile-assets` were downloaded from [here](https://github.com/Mozilla-Ocho/llamafile/releases/tag/0.2.1).
 
 <p align="center"> 
     <img src="./imgs/mistral-cli.gif"
@@ -48,6 +49,11 @@ This repository is focused on demonstrating some of these packages which provide
 
 2.) [**llamafile with external model weights**](./notebooks/llamafile-external-weights.ipynb): this notebook demonstrates how to execute a LLM downloaded in the **.GGUF** file format using `llamafile-main` and then save the model's output to a text file.
 
+## LLaMa.cpp
+LLaMa.cpp (or LLaMa C++) provides a lighter, more portable alternative to heavyweight frameworks. LLaMa.cpp was developed by Georgi Gerganov. It implements the Meta’s LLaMa architecture in efficient C/C++, and it is one of the most dynamic open-source communities around the LLM inference [[Source](https://www.datacamp.com/tutorial/llama-cpp-tutorial)].
+
+1.) [**llama.cpp embeddings**](./notebooks/llamacpp-embeddings.ipynb): this notebook demonstrates how to get hidden dimension embeddings from a single pass through a GGUF model. Once the embeddings are available they can be used for several ML/AI techniques such as classification, text-similarity, clustering, etc.
+
 
 # References
 1) File Formats: 
@@ -59,7 +65,7 @@ This repository is focused on demonstrating some of these packages which provide
     - [DeepSpeed MII](https://github.com/microsoft/DeepSpeed-MII)
     - [llamafile](https://github.com/Mozilla-Ocho/llamafile/tree/0.2.1)
     - [vLLM](https://github.com/vllm-project/vllm)
-    - [llama.cpp](https://github.com/ggerganov/llama.cpp)
+    - [LLaMA.cpp](https://github.com/ggerganov/llama.cpp)
 4) Articles and Blogs:
     - [A Comprehensive Guide to LLMs’ Inference and Serving](https://www.e2enetworks.com/blog/a-comprehensive-guide-to-llms-inference-and-serving-2)
     - [7 Frameworks for Serving LLMs](https://betterprogramming.pub/frameworks-for-serving-llms-60b7f7b23407)

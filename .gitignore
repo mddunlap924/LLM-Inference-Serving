@@ -11,3 +11,4 @@ __pycache__/
 output.txt
 main.log
 *.mp4
+llama.cpp/
